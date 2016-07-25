@@ -14,7 +14,7 @@ public class Cards {
 	 */
 	public Cards(){
 		cards = new ArrayList<Card>();
-		String[] flower = {"♠️","❤️","♣️","♦️"};
+		String[] flower = {"♦️","♣️","❤️","♠️"};
 		String[] number = {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
 		for(int i=0;i<4;i++){
 			for(int j=0;j<13;j++){
@@ -40,10 +40,13 @@ public class Cards {
 		System.out.print("[");
 		for(int i = 0;i<cards.size();i++){
 			Card tempCard = cards.get(i);
-			System.out.print(" "+tempCard.flower+tempCard.number);
+			System.out.print(" "+tempCard.getFlower()+tempCard.getNumber());
+			if(i!=0&&i%8==0){
+				System.out.print("]\n[");
+			}
 		}
 		//System.out.print("]\n共"+cards.size()+"张牌\n");
-		System.out.print("\n");
+		System.out.print("]\n");
 	}
 	
 	/**
@@ -70,7 +73,7 @@ public class Cards {
 			cards.set(index1, tempCard2);
 		}
 		//System.out.println("===========已经完成了"+chaos+"次洗牌===========");
-		System.out.println("\n\n===========已经完成洗牌===========");
+		System.out.println("\n===========已经完成洗牌===========");
 	}
 	
 }
